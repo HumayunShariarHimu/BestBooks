@@ -3,106 +3,34 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BestBooks — বই খোঁজার অ্যাপ</title>
+<meta name="theme-color" content="#101722" />
+<meta name="description" content="BestBooks — বাংলা ও English বইয়ের curated digital shelf. খুঁজুন, সংরক্ষণ করুন, পড়ার জন্য আবিষ্কার করুন।" />
+<meta property="og:title" content="BestBooks — আপনার নিজের পাঠের তাক" />
+<meta property="og:description" content="বাংলা ও English বইয়ের একটি সুন্দর, searchable digital library." />
+<meta property="og:type" content="website" />
+<title>BestBooks — আপনার নিজের পাঠের তাক</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
-  *{box-sizing:border-box}
-  :root{
-    --bg:#0d0f12; --panel:#12151a; --line:#232830;
-    --txt:#e7e9ee; --mut:#8b93a1; --acc:#5eead4; --warn:#f0a35e;
-  }
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--bg);color:var(--txt);line-height:1.65;
-    font-family:system-ui,-apple-system,"Noto Sans Bengali","Hind Siliguri","Segoe UI",Roboto,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  header{
-    position:sticky;top:0;z-index:20;
-    background:rgba(13,15,18,.94);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);padding:14px 16px 12px;
-  }
-  .wrap{max-width:880px;margin:0 auto}
-  h1{margin:0;font-size:18px;letter-spacing:.4px;font-weight:700}
-  h1 span{color:var(--acc)}
-  .sub{margin:2px 0 12px;font-size:12.5px;color:var(--mut)}
-  .searchbox{position:relative}
-  input[type=search]{
-    width:100%;padding:12px 14px;border-radius:10px;
-    border:1px solid var(--line);background:#0f1216;color:var(--txt);
-    font-size:15px;font-family:inherit;outline:none;transition:border-color .15s;
-    -webkit-appearance:none;appearance:none;
-  }
-  input[type=search]::placeholder{color:#5c6472}
-  input[type=search]:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(94,234,212,.08)}
-  .filters{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
-  .f{
-    padding:6px 13px;font-size:12.5px;border-radius:20px;cursor:pointer;
-    border:1px solid var(--line);background:#0f1216;color:var(--mut);
-    font-family:inherit;transition:.15s;
-  }
-  .f:hover{color:var(--txt);border-color:#39404b}
-  .f.on{border-color:var(--acc);color:var(--acc);background:rgba(94,234,212,.08)}
-  .count{font-size:12px;color:var(--mut);margin-top:9px}
-  main{max-width:880px;margin:0 auto;padding:6px 16px 70px}
-  .card{
-    display:flex;gap:12px;align-items:flex-start;
-    padding:12px 0;border-bottom:1px solid var(--line);
-  }
-  .card:hover .t{color:var(--acc)}
-  .num{
-    min-width:36px;font-size:12px;color:#5c6472;padding-top:4px;
-    font-variant-numeric:tabular-nums;text-align:right;
-  }
-  .info{flex:1;min-width:0}
-  .t{font-size:15px;font-weight:600;transition:color .15s;word-wrap:break-word}
-  .a{font-size:12.5px;color:var(--mut);margin-top:1px}
-  .links{display:flex;gap:6px;flex-shrink:0;padding-top:3px}
-  .links a{
-    font-size:11.5px;text-decoration:none;padding:5px 10px;border-radius:7px;
-    border:1px solid var(--line);color:var(--mut);white-space:nowrap;transition:.15s;
-  }
-  .links a:hover{border-color:var(--acc);color:var(--acc);background:rgba(94,234,212,.06)}
-  .links a.pdf:hover{border-color:var(--warn);color:var(--warn);background:rgba(240,163,94,.06)}
-  mark{background:rgba(94,234,212,.2);color:var(--acc);border-radius:3px;padding:0 1px}
-  .empty{text-align:center;color:var(--mut);padding:56px 0;font-size:14px}
-  footer{
-    text-align:center;font-size:11.5px;color:#525a67;
-    padding:22px 16px 40px;border-top:1px solid var(--line);margin-top:10px;
-  }
-  @media (max-width:540px){
-    .card{flex-wrap:wrap}
-    .links{width:100%;padding-left:48px}
-    .num{min-width:32px}
-  }
+:root{--ink:#101722;--ink-2:#172231;--paper:#f5f2eb;--card:#fffdf8;--text:#17202b;--muted:#687384;--line:#e5e1d8;--accent:#d89232;--accent-2:#f0bb62;--soft:#fff3df;--shadow:0 18px 55px rgba(18,27,39,.09)}
+[data-theme="dark"]{--paper:#0e141d;--card:#151e29;--text:#edf1f6;--muted:#9aa6b6;--line:#273343;--soft:#241f18;--shadow:0 22px 60px rgba(0,0,0,.24)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--text);font-family:"Hind Siliguri",system-ui,sans-serif;line-height:1.5;transition:background .25s,color .25s}.shell{max-width:1180px;margin:auto;padding:0 28px}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}.mark{display:grid;place-items:center;width:38px;height:44px;background:var(--accent);color:#fff;border-radius:7px 7px 12px 12px;clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);font:700 21px Georgia}.brand-name{font-size:21px;font-weight:700;letter-spacing:-.4px}.brand-name span{color:var(--accent)}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}.top-actions{display:flex;gap:10px;align-items:center}.icon-btn,.ghost-btn{border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;border-radius:10px;font:600 13px inherit;transition:.2s}.icon-btn{width:40px;height:40px;font-size:18px}.ghost-btn{padding:9px 14px}.icon-btn:hover,.ghost-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;padding:82px 0 64px}.hero h1{font:600 clamp(42px,6vw,76px)/1.05 "Noto Serif Bengali",serif;letter-spacing:-2px;margin:13px 0 22px;max-width:720px}.hero h1 em{font-style:normal;color:var(--accent)}.hero-copy{font-size:17px;color:var(--muted);max-width:570px}.hero-note{border-left:2px solid var(--accent);padding:4px 0 4px 20px;color:var(--muted);font-size:15px}.hero-note strong{display:block;color:var(--text);font-size:22px;margin-bottom:3px}.library{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.library-head{padding:22px 24px 18px;border-bottom:1px solid var(--line)}.search-row{display:flex;gap:10px;align-items:center}.search-wrap{position:relative;flex:1}.search-wrap span{position:absolute;left:15px;top:10px;color:var(--muted);font-size:20px}.search{width:100%;height:46px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--text);font:500 15px inherit;padding:0 42px;outline:none}.search:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(216,146,50,.13)}.kbd{position:absolute;right:13px;top:12px;color:var(--muted);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 5px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.control,.filter{height:34px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--muted);font:500 13px inherit;padding:0 11px;cursor:pointer}.filter.active{background:var(--ink);border-color:var(--ink);color:#fff}.filter[data-filter="favorites"].active{background:var(--accent);border-color:var(--accent)}.control:hover,.filter:hover{border-color:var(--accent);color:var(--accent)}select.control{padding-right:8px}.stats{display:flex;gap:26px;padding:17px 24px;background:rgba(128,128,128,.035);border-bottom:1px solid var(--line)}.stat strong{display:block;font-size:21px;line-height:1.1}.stat span{font-size:12px;color:var(--muted)}
+.list{padding:0 24px}.book{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:19px 0;border-bottom:1px solid var(--line);animation:rise .35s both}.book:hover .book-title{color:var(--accent)}.book-no{font:600 13px/1 "Noto Serif Bengali",serif;color:var(--accent);opacity:.8}.book-title{font:600 17px/1.35 "Noto Serif Bengali",serif;transition:color .2s}.author{font-size:13px;color:var(--muted);margin-top:4px}.book-actions{display:flex;align-items:center;gap:7px}.action{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:7px 10px;text-decoration:none;font:500 12px inherit;cursor:pointer;white-space:nowrap}.action:hover{border-color:var(--accent);color:var(--accent)}.action.save.saved{color:var(--accent);border-color:var(--accent);background:var(--soft)}.empty{text-align:center;padding:70px 20px;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:7px}.load-more{display:block;margin:24px auto 30px}
+footer{padding:36px 0 48px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:13px}.footer-link{color:var(--accent);text-decoration:none}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}.modal-backdrop{position:fixed;inset:0;background:rgba(9,14,20,.5);backdrop-filter:blur(5px);display:none;place-items:center;padding:20px;z-index:5}.modal-backdrop.open{display:grid}.modal{background:var(--card);border:1px solid var(--line);border-radius:20px;max-width:460px;width:100%;padding:28px;box-shadow:var(--shadow)}.modal h2{font:600 26px "Noto Serif Bengali",serif;margin:0 0 8px}.modal p{color:var(--muted);margin:0 0 20px}.modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}@media(max-width:760px){.shell{padding:0 17px}.hero{grid-template-columns:1fr;gap:28px;padding:55px 0 42px}.hero h1{font-size:45px}.hero-copy{font-size:15px}.top-actions .ghost-btn{display:none}.library-head,.list{padding-left:16px;padding-right:16px}.stats{padding-left:16px;padding-right:16px;gap:19px}.book{grid-template-columns:34px 1fr;gap:12px;align-items:start}.book-actions{grid-column:2;flex-wrap:wrap}.book-title{font-size:16px}footer{display:block}.footer-link{display:inline-block;margin-top:8px}.kbd{display:none}}@media(max-width:420px){.search-row{display:block}.search-wrap{margin-bottom:9px}.search-row>.ghost-btn{width:100%}.stats{justify-content:space-between}.stat strong{font-size:18px}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <h1>Best<span>Books</span></h1>
-    <p class="sub" id="sub">বই খুঁজুন — Google ও PDF লিংকসহ</p>
-    <div class="searchbox">
-      <input id="q" type="search" placeholder="বই বা লেখকের নাম লিখুন…  ( / চাপুন )" autocomplete="off" />
-    </div>
-    <div class="filters">
-      <button class="f on" data-lang="all">সব</button>
-      <button class="f" data-lang="bn">বাংলা</button>
-      <button class="f" data-lang="en">English</button>
-    </div>
-    <div class="count" id="count"></div>
-  </div>
-</header>
-
-<main id="list"></main>
-
-<footer>BestBooks - Humayun Shariar Himu </footer>
-
+<div class="shell">
+<header class="topbar"><a class="brand" href="./"><span class="mark">B</span><span class="brand-name">Best<span>Books</span></span></a><div class="top-actions"><a class="ghost-btn" href="#library">বই দেখুন ↓</a><button class="icon-btn" id="themeBtn" title="থিম বদলান" aria-label="থিম বদলান">◐</button></div></header>
+<section class="hero"><div><div class="eyebrow">A curated digital shelf · 2026</div><h1>আপনার নিজের <em>পাঠের তাক।</em></h1><p class="hero-copy">গল্প, উপন্যাস ও জ্ঞানের বই—একটি শান্ত, সুন্দর জায়গায়। খুঁজুন, প্রিয় তালিকায় রাখুন, আর পরের পাঠের জন্য আবিষ্কার করুন।</p></div><div class="hero-note"><strong id="heroCount">—</strong><span>টি বই আপনার জন্য সাজানো আছে</span><br><small>বাংলা-first · English included</small></div></section>
+<section class="library" id="library"><div class="library-head"><div class="search-row"><div class="search-wrap"><span>⌕</span><input id="q" class="search" type="search" placeholder="বই বা লেখকের নাম লিখুন…" autocomplete="off" aria-label="বই বা লেখকের নাম দিয়ে খুঁজুন"/><kbd class="kbd">/</kbd></div><button class="ghost-btn" id="randomBtn">✦ আজকের পছন্দ</button></div><div class="controls"><button class="filter active" data-filter="all">সব বই</button><button class="filter" data-filter="bn">বাংলা</button><button class="filter" data-filter="en">English</button><button class="filter" data-filter="favorites">♥ আমার পছন্দ</button><select id="sort" class="control" aria-label="সাজান"><option value="default">মূল তালিকা</option><option value="az">নাম: A–Z</option><option value="za">নাম: Z–A</option><option value="author">লেখক অনুযায়ী</option></select></div></div><div class="stats"><div class="stat"><strong id="count">—</strong><span>দেখানো হচ্ছে</span></div><div class="stat"><strong id="favCount">০</strong><span>সংরক্ষিত</span></div><div class="stat"><strong id="authorCount">—</strong><span>লেখক</span></div></div><div class="list" id="list"></div><button class="ghost-btn load-more" id="moreBtn">আরও বই দেখুন</button></section>
+<footer><div>BestBooks · পাঠের আনন্দ, এক জায়গায়<br><small>Curated by Humayun Shariar Himu</small></div><a class="footer-link" href="https://github.com/HumayunShariarHimu/BestBooks" target="_blank" rel="noopener">Open source on GitHub ↗</a></footer>
+</div><div class="toast" id="toast" role="status"></div><div class="modal-backdrop" id="modal"><div class="modal"><h2 id="modalTitle">আজকের পছন্দ</h2><p id="modalText"></p><div class="modal-actions"><a id="modalGoogle" class="action" target="_blank" rel="noopener">Google-এ খুঁজুন ↗</a><a id="modalPdf" class="action" target="_blank" rel="noopener">PDF খুঁজুন ↗</a><button class="ghost-btn" id="closeModal">বন্ধ করুন</button></div></div></div>
 <script>
-/* ============================================================
-   BestBooks — বইয়ের ডেটা
-   প্রতিটি আইটেম: [বইয়ের নাম, লেখক]
-   ============================================================ */
 const BOOKS = [
 ["অশনি সংকেত","বিভূতিভূষণ বন্দোপাধ্যায়"],
 ["অলাতচক্র","আহমদ ছফা"],
@@ -798,126 +726,13 @@ const BOOKS = [
 ["পিতা পুত্র","ইভান তুর্গেনেভ"],
 ["নন্দনতত্ত্ব","সৈয়দ মনজুরুল ইসলাম"]
 ];
-
-/* ============================================================
-   অ্যাপ লজিক
-   ============================================================ */
-const listEl  = document.getElementById("list");
-const qEl     = document.getElementById("q");
-const countEl = document.getElementById("count");
-const subEl   = document.getElementById("sub");
-
-const BN_DIGITS = "০১২৩৪৫৬৭৮৯";
-const toBn = n => String(n).replace(/\d/g, d => BN_DIGITS[+d]);
-const isBangla = s => /[\u0980-\u09FF]/.test(s);
-
-const esc = s => String(s).replace(/[&<>"]/g, c =>
-  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
-
-/* মিলে যাওয়া অংশ হাইলাইট */
-function hl(text, q) {
-  if (!q) return esc(text);
-  const i = text.toLowerCase().indexOf(q);
-  if (i < 0) return esc(text);
-  return esc(text.slice(0, i)) +
-         "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" +
-         esc(text.slice(i + q.length));
-}
-
-/* Google সার্চ লিংক — বইয়ের নাম কোটেশনে, সাথে লেখক */
-function googleURL(title, author) {
-  const extra = isBangla(title) ? "বই" : "book";
-  return "https://www.google.com/search?q=" +
-         encodeURIComponent(`"${title}" ${author} ${extra}`.replace(/\s+/g, " ").trim());
-}
-
-/* PDF খোঁজার লিংক */
-function pdfURL(title, author) {
-  return "https://www.google.com/search?q=" +
-         encodeURIComponent(`"${title}" ${author} pdf`.replace(/\s+/g, " ").trim());
-}
-
-let activeLang = "all";
-let timer = null;
-
-function render() {
-  const q = qEl.value.trim().toLowerCase();
-  const frag = document.createDocumentFragment();
-  let shown = 0;
-
-  for (let i = 0; i < BOOKS.length; i++) {
-    const title  = BOOKS[i][0];
-    const author = BOOKS[i][1] || "";
-    const bangla = isBangla(title);
-
-    if (activeLang === "bn" && !bangla) continue;
-    if (activeLang === "en" &&  bangla) continue;
-    if (q && !(title + " " + author).toLowerCase().includes(q)) continue;
-
-    shown++;
-
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML =
-      '<div class="num">' + toBn(i + 1) + '</div>' +
-      '<div class="info">' +
-        '<div class="t">' + hl(title, q) + '</div>' +
-        (author ? '<div class="a">' + hl(author, q) + '</div>' : '') +
-      '</div>' +
-      '<div class="links">' +
-        '<a href="' + googleURL(title, author) + '" target="_blank" rel="noopener">Google</a>' +
-        '<a class="pdf" href="' + pdfURL(title, author) + '" target="_blank" rel="noopener">PDF</a>' +
-      '</div>';
-
-    frag.appendChild(card);
-  }
-
-  listEl.textContent = "";
-  if (shown === 0) {
-    const d = document.createElement("div");
-    d.className = "empty";
-    d.textContent = "কোনো বই পাওয়া যায়নি — অন্য নাম দিয়ে চেষ্টা করুন।";
-    listEl.appendChild(d);
-  } else {
-    listEl.appendChild(frag);
-  }
-
-  countEl.textContent = q || activeLang !== "all"
-    ? toBn(BOOKS.length) + "টি বইয়ের মধ্যে " + toBn(shown) + "টি দেখানো হচ্ছে"
-    : "মোট " + toBn(BOOKS.length) + "টি বই";
-}
-
-/* ইনপুট (debounce) */
-qEl.addEventListener("input", () => {
-  clearTimeout(timer);
-  timer = setTimeout(render, 90);
-});
-
-/* ভাষা ফিল্টার */
-document.querySelectorAll(".f").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".f").forEach(b => b.classList.remove("on"));
-    btn.classList.add("on");
-    activeLang = btn.dataset.lang;
-    render();
-  });
-});
-
-/* কীবোর্ড শর্টকাট: "/" = ফোকাস, Esc = ক্লিয়ার */
-document.addEventListener("keydown", e => {
-  if (e.key === "/" && document.activeElement !== qEl) {
-    e.preventDefault();
-    qEl.focus();
-  } else if (e.key === "Escape") {
-    qEl.value = "";
-    qEl.blur();
-    render();
-  }
-});
-
-/* শুরু */
-subEl.textContent = "বই খুঁজুন — Google ও PDF লিংকসহ · " + toBn(BOOKS.length) + "টি বই";
-render();
-</script>
-</body>
-</html>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]), isBn=s=>/[\u0980-\u09FF]/.test(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])), google=(t,a)=>`https://www.google.com/search?q=${encodeURIComponent(`${t} ${a||''}`)}`, pdf=(t,a)=>`https://www.google.com/search?q=${encodeURIComponent(`${t} ${a||''} filetype:pdf`)}`;
+let state={filter:'all',query:'',sort:'default',page:1};let saved=JSON.parse(localStorage.getItem('bestbooks-favorites')||'[]');const pageSize=28;
+function show(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function filtered(){let arr=BOOKS.map((b,i)=>({b,i}));if(state.filter==='bn')arr=arr.filter(x=>isBn(x.b[0]));if(state.filter==='en')arr=arr.filter(x=>!isBn(x.b[0]));if(state.filter==='favorites')arr=arr.filter(x=>saved.includes(x.i));const q=state.query.toLowerCase();if(q)arr=arr.filter(x=>(x.b[0]+' '+x.b[1]).toLowerCase().includes(q));if(state.sort==='az')arr.sort((a,b)=>a.b[0].localeCompare(b.b[0],'bn'));if(state.sort==='za')arr.sort((a,b)=>b.b[0].localeCompare(a.b[0],'bn'));if(state.sort==='author')arr.sort((a,b)=>(a.b[1]||'').localeCompare(b.b[1]||'','bn'));return arr}
+function highlight(s){const q=state.query.trim();if(!q)return esc(s);return esc(s).replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'ig'),'<mark>$1</mark>')}
+function render(){const arr=filtered(),visible=arr.slice(0,state.page*pageSize),list=$('#list');$('#count').textContent=bn(arr.length);$('#favCount').textContent=bn(saved.length);$('#authorCount').textContent=bn(new Set(BOOKS.map(b=>b[1]).filter(Boolean)).size);$('#heroCount').textContent=bn(BOOKS.length);list.innerHTML=visible.length?visible.map((x,n)=>{const [title,author]=x.b,yes=saved.includes(x.i);return `<article class="book"><div class="book-no">${bn(x.i+1).padStart(3,'০')}</div><div><div class="book-title">${highlight(title)}</div>${author?`<div class="author">${highlight(author)}</div>`:''}</div><div class="book-actions"><button class="action save ${yes?'saved':''}" data-save="${x.i}">${yes?'♥ সংরক্ষিত':'♡ সংরক্ষণ'}</button><button class="action copy" data-copy="${x.i}">কপি</button><a class="action" href="${google(title,author)}" target="_blank" rel="noopener">Google ↗</a><a class="action" href="${pdf(title,author)}" target="_blank" rel="noopener">PDF ↗</a></div></article>`}).join(''):`<div class="empty"><strong>এই তাকটিতে এমন কোনো বই নেই</strong>অন্য নাম দিয়ে খুঁজুন, অথবা ফিল্টারটি বদলে দেখুন।</div>`;$('#moreBtn').style.display=visible.length<arr.length?'block':'none'}
+function save(i){saved=saved.includes(i)?saved.filter(x=>x!==i):[...saved,i];localStorage.setItem('bestbooks-favorites',JSON.stringify(saved));render();show(saved.includes(i)?'বইটি আপনার পছন্দের তালিকায় রাখা হয়েছে':'বইটি তালিকা থেকে সরানো হয়েছে')}
+$('#q').addEventListener('input',e=>{state.query=e.target.value;state.page=1;render()});$('#sort').addEventListener('change',e=>{state.sort=e.target.value;state.page=1;render()});$$('.filter').forEach(b=>b.addEventListener('click',()=>{$$('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.filter=b.dataset.filter;state.page=1;render()}));$('#moreBtn').addEventListener('click',()=>{state.page++;render()});$('#list').addEventListener('click',e=>{const s=e.target.closest('[data-save]'),c=e.target.closest('[data-copy]');if(s)save(+s.dataset.save);if(c){const b=BOOKS[+c.dataset.copy];navigator.clipboard?.writeText(`${b[0]} — ${b[1]||'BestBooks'}`);show('বইয়ের তথ্য কপি হয়েছে')}});$('#themeBtn').addEventListener('click',()=>{const dark=document.documentElement.dataset.theme==='dark';document.documentElement.dataset.theme=dark?'':'dark';localStorage.setItem('bestbooks-theme',dark?'light':'dark')});if(localStorage.getItem('bestbooks-theme')==='dark')document.documentElement.dataset.theme='dark';document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();$('#q').focus()}if(e.key==='Escape'){$('#q').value='';state.query='';render()}});
+$('#randomBtn').addEventListener('click',()=>{const b=BOOKS[Math.floor(Math.random()*BOOKS.length)];$('#modalText').innerHTML=`<strong>${esc(b[0])}</strong>${b[1]?`<br><span>${esc(b[1])}</span>`:''}`;$('#modalGoogle').href=google(b[0],b[1]);$('#modalPdf').href=pdf(b[0],b[1]);$('#modal').classList.add('open')});$('#closeModal').addEventListener('click',()=>$('#modal').classList.remove('open'));$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')});render();
+</script></body></html>
